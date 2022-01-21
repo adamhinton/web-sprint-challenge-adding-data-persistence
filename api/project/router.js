@@ -1,4 +1,3 @@
-// build your `/api/projects` router here
 const router = require("express").Router();
 const Project = require("./model");
 
@@ -15,7 +14,6 @@ router.post("/", (req, res, next) => {
   Project.createProject(req.body)
     .then((newProject) => {
       Project.fixBoolean(newProject);
-      // this.delete(newProject.project_id);
       res.status(201).json(newProject[0]);
     })
     .catch((err) => {

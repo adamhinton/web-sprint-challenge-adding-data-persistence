@@ -12,17 +12,7 @@ async function getProjectById(project_id) {
   return projectRows;
 }
 
-// async function validateProjectId(req, res, next) {
-//   const project = await db("project")
-//     .where("project_id", req.params.project_id)
-//     .first();
-//   if (project) {
-//     next();
-//   } else {
-//     next({ message: "invalid project_id", status: 404 });
-//   }
-// }
-
+//changes API boolean from 0 to false and from 1 to true
 const fixBoolean = (items) => {
   items.forEach((item) => {
     item.project_completed === 0
@@ -42,10 +32,3 @@ module.exports = {
   fixBoolean,
   createProject,
 };
-
-// const fixBoolean = items =>{
-//   items.forEach(item) =>{
-//     item.project_completed ? proj.project_completed = true
-//     : proj.project_completed = false;
-//   }
-// }

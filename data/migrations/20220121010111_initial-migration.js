@@ -29,8 +29,6 @@ exports.up = async function (knex) {
   });
 
   //joining comes in the model, not here
-
-  // await knex.schema.createTable("", (table) => {});
 };
 
 exports.down = async function (knex) {

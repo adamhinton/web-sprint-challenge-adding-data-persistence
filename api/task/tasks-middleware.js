@@ -8,7 +8,6 @@ const validateTask = (req, res, next) => {
   if (!task_description || !project_id) {
     next({ message: "put in a task description and project_id" });
   } else {
-    //   console.log("Project with id:", Project.getProjectById(project_id));
     next();
   }
 };

@@ -1,12 +1,7 @@
-// build your `/api/resources` router here
 const express = require("express");
-const res = require("express/lib/response");
 const Resource = require("./model");
 
 const router = require("express").Router();
-
-// const server = express();
-// server.use(express.json());
 
 router.get("/", (req, res, next) => {
   Resource.getResources()

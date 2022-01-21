@@ -13,8 +13,6 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", validateTask, validateProjectId, (req, res, next) => {
-  //   res.json({ message: "posting to tasks" });
-  console.log("posting");
   Task.createTask(req.body).then((newTask) => {
     Task.fixBoolean(newTask);
     res.status(201).json(newTask[0]);
