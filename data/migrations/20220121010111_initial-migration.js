@@ -1,7 +1,12 @@
 exports.up = async function (knex) {
-  await Promise.resolve("up");
+  await knex.schema.createTable("projects", (table) => {
+    table.increments("project_id");
+    table.string("project_name", 200).notNullable().unique();
+    table.string("project_description", 200);
+    table.boolean("project_completed").defaultTo(0);
+  });
 };
 
-exports.down = function (knex) {
-  return Promise.resolve("down");
+exports.down = async function (knex) {
+  await knex.schema.dropTableIfExists("projects");
 };
