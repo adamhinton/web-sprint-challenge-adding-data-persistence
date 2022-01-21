@@ -9,9 +9,19 @@ async function getProjectById(project_id) {
   const projectRows = await db("projects")
     .select()
     .where("project_id", project_id);
-
   return projectRows;
 }
+
+// async function validateProjectId(req, res, next) {
+//   const project = await db("project")
+//     .where("project_id", req.params.project_id)
+//     .first();
+//   if (project) {
+//     next();
+//   } else {
+//     next({ message: "invalid project_id", status: 404 });
+//   }
+// }
 
 const fixBoolean = (items) => {
   items.forEach((item) => {
