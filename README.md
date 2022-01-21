@@ -91,7 +91,7 @@ Build an API inside the `api` folder with endpoints for:
   - Even though `task_completed` is stored as an integer, the API uses booleans when interacting with the client
   - Example of response body: `{"task_id":1,"task_description":"baz","task_notes":null,"task_completed":false,"project_id:1}`
 
-- [ ] `[GET] /api/tasks`
+- [x] `[GET] /api/tasks`
   - Even though `task_completed` is stored as an integer, the API uses booleans when interacting with the client
   - Each task must include `project_name` and `project_description`
   - Example of response body: `[{"task_id":1,"task_description":"baz","task_notes":null,"task_completed":false,"project_name:"bar","project_description":null}]`
@@ -106,16 +106,20 @@ Build an API inside the `api` folder with endpoints for:
 
 ## Submission format
 
-- [ ] Submit via Codegrade by pushing commits to your `main` branch on Github.
-- [ ] Check Codegrade before the deadline to compare its results against your local tests.
-- [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback.
-- [ ] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
+- [x] Submit via Codegrade by pushing commits to your `main` branch on Github.
+- [x] Check Codegrade before the deadline to compare its results against your local tests.
+- [x] Check Codegrade on the days following the Sprint Challenge for reviewer feedback.
+- [x] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between Relational Databases and SQL.
+   RD's are the management system, the software that stores the databases. SQL is the query language that we use to modify, delete, add, and view tables (amont other things).
 2. Why do tables need a Primary Key?
+   To avoid confusion with any other values. Makes for better storage and less ambiguity.
 3. What is the name given to a table column that references the Primary Key on another table?
+   Foreign key
 4. What do we need in order to have a _many to many_ relationship between two tables?
+   A junction table
