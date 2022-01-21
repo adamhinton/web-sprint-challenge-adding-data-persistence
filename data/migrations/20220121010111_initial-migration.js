@@ -28,6 +28,8 @@ exports.up = async function (knex) {
       .onUpdate("RESTRICT");
   });
 
+  //joining comes in the model, not here
+
   // await knex.schema.createTable("", (table) => {});
 };
 
