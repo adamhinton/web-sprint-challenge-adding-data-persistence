@@ -17,8 +17,16 @@ router.get("/", (req, res, next) => {
     .catch(next);
 });
 
-// router.post("/", (req, res, next) =>{
-
-// }
+router.post("/", (req, res, next) => {
+  Project.create(req.body)
+    .then((newProject) => {
+      Project.fixBoolean(newProject);
+      // this.delete(newProject.project_id);
+      res.status(201).json(newProject[0]);
+    })
+    .catch((err) => {
+      res.status(500).json({ message: err.message });
+    });
+});
 
 module.exports = router;

@@ -15,16 +15,22 @@ async function getProjectById(project_id) {
 
 const fixBoolean = (items) => {
   items.forEach((item) => {
-    item.project_completed
-      ? (item.project_completed = true)
-      : (item.project_completed = false);
+    item.project_completed === 0
+      ? (item.project_completed = false)
+      : (item.project_completed = true);
   });
 };
+
+async function create(project) {
+  const [id] = await db("projects").insert(project);
+  return getProjectById(id);
+}
 
 module.exports = {
   getProjects,
   getProjectById,
   fixBoolean,
+  create,
 };
 
 // const fixBoolean = items =>{
