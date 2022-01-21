@@ -1,5 +1,6 @@
 // build your `/api/resources` router here
 const express = require("express");
+const res = require("express/lib/response");
 const Resource = require("./model");
 
 const router = require("express").Router();
@@ -16,14 +17,13 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-  //   helpers
-  //     .createResource(req.body)
-  //     .then((resource) => {
-  //       res.status.json(resource);
-  //     })
-  //     .catch(next);
-  console.log("post");
-  res.json({ message: "test" });
+  Resource.createResource(req.body)
+    .then((newResource) => {
+      res.status(201).json(newResource[0]);
+    })
+    .catch((err) => {
+      res.status(500).json({ message: err.message });
+    });
 });
 
 module.exports = router;

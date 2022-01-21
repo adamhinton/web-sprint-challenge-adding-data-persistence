@@ -21,7 +21,7 @@ const fixBoolean = (items) => {
   });
 };
 
-async function create(project) {
+async function createProject(project) {
   const [id] = await db("projects").insert(project);
   return getProjectById(id);
 }
@@ -30,7 +30,7 @@ module.exports = {
   getProjects,
   getProjectById,
   fixBoolean,
-  create,
+  createProject,
 };
 
 // const fixBoolean = items =>{

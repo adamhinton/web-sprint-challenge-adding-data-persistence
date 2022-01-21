@@ -18,7 +18,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-  Project.create(req.body)
+  Project.createProject(req.body)
     .then((newProject) => {
       Project.fixBoolean(newProject);
       // this.delete(newProject.project_id);
