@@ -1,9 +1,3 @@
-// import { types } from "pg";
-// types.setTypeParser(16, (value) => {
-//   // 16 is the type enum vaue of boolean
-//   return Boolean(parseInt(value));
-// });
-
 // build your `/api/projects` router here
 const router = require("express").Router();
 const Project = require("./model");
